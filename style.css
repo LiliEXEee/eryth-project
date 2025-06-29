@@ -10,7 +10,7 @@ body .page {
   margin: 20px 80px;
 }
 
-/* NAVIGATION MODERNE TRANSPARENTE */
+
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -72,7 +72,7 @@ nav .buttons .register:hover {
   transform: scale(1.08);
 }
 
-/* Boutons centraux façon fnexpose.xyz */
+
 .btns-container {
   display: flex;
   justify-content: center;
@@ -111,7 +111,7 @@ nav .buttons .register:hover {
   transform: translateY(-2px) scale(1.04);
 }
 
-/* Header */
+
 header {
   margin-top: 40px;
   background: none;
@@ -126,7 +126,7 @@ header h1 {
   transition: transform 2.5s;
 }
 
-/* Barre de recherche centrée (inutile si tu ne l'utilises plus) */
+
 .search-container {
   display: flex;
   justify-content: center;
@@ -150,7 +150,7 @@ header h1 {
   box-shadow: 0 4px 24px rgba(245,66,102,0.15);
 }
 
-/* Pied de page moderne transparent */
+
 footer {
   background: rgba(26, 26, 26, 0.65);
   padding: 25px 100px;
@@ -171,7 +171,7 @@ footer h5 {
   margin-top: 0;
 }
 
-/* Responsive */
+
 @media screen and (max-width: 900px) {
   body .page {
     margin: 10px;
@@ -215,8 +215,8 @@ footer h5 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 38px;      /* petite taille */
-  height: 38px;     /* petite taille */
+  width: 38px;      
+  height: 38px;    
   border-radius: 50%;
   background: rgba(30,30,30,0.7);
   margin-right: 10px;
@@ -231,8 +231,8 @@ footer h5 {
   box-shadow: 0 8px 24px rgba(245,66,102,0.25);
 }
 .bubble-img {
-  width: 26px;      /* petite taille */
-  height: 26px;     /* petite taille */
+  width: 26px;      
+  height: 26px;     
   object-fit: cover;
   border-radius: 50%;
   display: block;
@@ -368,8 +368,8 @@ body {
 body {
   min-height: 100vh;
   margin: 0;
-  /* Dégradé sombre bleu RGX */
+  
   background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
-  /* Pour fallback si le dégradé n'est pas supporté */
+ 
   background-color: #0f2027;
 }
