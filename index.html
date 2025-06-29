@@ -177,7 +177,6 @@
       <form id="register-form" autocomplete="off">
         <input id="register-username" type="text" placeholder="Nom d'utilisateur" style="width:90%;margin-bottom:12px;padding:10px;border-radius:8px;border:none;">
         <input id="register-password" type="password" placeholder="Mot de passe" style="width:90%;margin-bottom:12px;padding:10px;border-radius:8px;border:none;">
-        <input id="register-email" type="email" placeholder="Adresse e-mail" style="width:90%;margin-bottom:18px;padding:10px;border-radius:8px;border:none;">
         <div id="register-error" style="color:#f54266;font-size:1rem;margin-bottom:10px;min-height:22px;"></div>
         <button type="submit" class="center-btn" style="width:100%;">Créer mon compte</button>
       </form>
@@ -219,7 +218,6 @@
       document.getElementById('register-modal').classList.add('show');
       document.getElementById('register-username').value = '';
       document.getElementById('register-password').value = '';
-      document.getElementById('register-email').value = '';
       document.getElementById('register-error').textContent = '';
     };
 
@@ -255,9 +253,9 @@
       e.preventDefault();
       const username = document.getElementById('register-username').value.trim();
       const password = document.getElementById('register-password').value;
-      const email = document.getElementById('register-email').value.trim();
+      
       const errorDiv = document.getElementById('register-error');
-      if (!username || !password || !email) {
+      if (!username || !password) {
         errorDiv.textContent = "Veuillez remplir tous les champs.";
         return;
       }
@@ -265,7 +263,7 @@
         errorDiv.textContent = "Ce nom d'utilisateur existe déjà.";
         return;
       }
-      users.push({ username, password, email });
+      users.push({ username, password,});
       saveUsers();
       errorDiv.style.color = "#00BFFF";
       errorDiv.textContent = "Compte créé ! Vous êtes connecté.";
