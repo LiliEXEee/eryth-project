@@ -15,9 +15,7 @@
     <nav style="background:transparent;box-shadow:none;border:none;">
       <div class="onglets"></div>
     </nav>
-    <!-- Fin de la barre de navigation -->
 
-    <!-- Liens vers autres pages/onglets -->
     <div class="pages-container" style="display:flex;justify-content:center;gap:32px;margin:40px 0 24px 0;">
       <a href="https://discord.gg/Ksf55MC5RH" target="_blank" rel="noopener" class="page-link" style="display:flex;align-items:center;gap:10px;padding:18px 28px;background:#181f2a;border-radius:16px;box-shadow:0 2px 12px rgba(0,0,0,0.12);text-decoration:none;transition:background 0.2s;">
         <img src="https://img.freepik.com/premium-psd/discord-logo-3d-icon-render-image_576588-55.jpg" alt="Discord" style="width:38px;height:38px;border-radius:8px;">
@@ -41,9 +39,7 @@
         </div>
       </a>
     </div>
-    <!-- Fin des liens externes -->
-
-    <!-- Header centré -->
+  
     <div class="header-center" style="text-align:center;">
       <h1 style="
         color:#00BFFF;
@@ -115,7 +111,6 @@
       <a href="#" class="center-btn">Notre biographie</a>
       <a href="#" class="center-btn">Aide</a>
     </div>
-    <!-- Fin du header -->
   </section>
 
   <div id="accueil-modal" class="bio-modal">
@@ -171,7 +166,7 @@
     <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="User" style="width:28px;height:28px;">
   </button>
 
-  <!-- Modal Connexion -->
+
   <div id="login-modal" class="bio-modal">
     <div class="bio-content" style="max-width:350px;">
       <span class="bio-close" id="close-login">&times;</span>
@@ -188,7 +183,7 @@
     </div>
   </div>
 
-  <!-- Modal Inscription -->
+
   <div id="register-modal" class="bio-modal">
     <div class="bio-content" style="max-width:350px;">
       <span class="bio-close" id="close-register">&times;</span>
@@ -214,13 +209,13 @@
   >
 
   <script>
-    // --- "Base de données" locale (simulation) ---
+
     let users = JSON.parse(localStorage.getItem('eryth_users') || '[]');
     function saveUsers() {
       localStorage.setItem('eryth_users', JSON.stringify(users));
     }
 
-    // --- Gestion de la session utilisateur ---
+  
     function setCurrentUser(username) {
       localStorage.setItem('eryth_current_user', username);
     }
@@ -231,7 +226,7 @@
       localStorage.removeItem('eryth_current_user');
     }
 
-    // --- Affichage du modal inscription depuis le login ---
+ 
     document.getElementById('show-register').onclick = function(e) {
       e.preventDefault();
       document.getElementById('login-modal').classList.remove('show');
@@ -241,7 +236,7 @@
       document.getElementById('register-error').textContent = '';
     };
 
-    // --- Connexion utilisateur ---
+
     document.getElementById('login-form').onsubmit = function(e) {
       e.preventDefault();
       const username = document.getElementById('login-username').value.trim();
@@ -268,7 +263,7 @@
       }, 1000);
     };
 
-    // --- Création de compte sans 2FA ---
+
     document.getElementById('register-form').onsubmit = function(e) {
       e.preventDefault();
       const username = document.getElementById('register-username').value.trim();
@@ -297,7 +292,7 @@
       }, 1000);
     };
 
-    // Met à jour le bouton utilisateur après connexion
+
     function updateUserBtn(username) {
       const btn = document.getElementById('user-btn');
       btn.innerHTML = `
@@ -309,7 +304,7 @@
       };
     }
 
-    // Remet le bouton utilisateur à l'état déconnecté
+
     function resetUserBtn() {
       const btn = document.getElementById('user-btn');
       btn.innerHTML = `<img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="User" style="width:28px;height:28px;">`;
@@ -318,7 +313,6 @@
       };
     }
 
-    // --- Affichage des options utilisateur après connexion ---
     function showUserOptions(username) {
       let old = document.getElementById('user-options-modal');
       if (old) old.remove();
@@ -363,7 +357,7 @@
       };
     }
 
-    // --- Fermeture modals login/register ---
+
     document.getElementById('close-login').onclick = function() {
       document.getElementById('login-modal').classList.remove('show');
     };
@@ -384,7 +378,7 @@
       }
     });
 
-    // --- Affichage du bon état du bouton user au chargement ---
+  
     document.addEventListener("DOMContentLoaded", function() {
       const current = getCurrentUser();
       if (current) {
@@ -394,7 +388,7 @@
       }
     });
 
-    // --- Modals accueil/bio/aide + typing effect ---
+
     document.addEventListener("DOMContentLoaded", function() {
       document.getElementById('accueil-modal').classList.add('show');
       // Typing effect for subtitle
@@ -453,14 +447,13 @@
       if (e.target === this) this.classList.remove('show');
     };
 
-    // Fermer les modals avec la touche Echap
     document.addEventListener('keydown', function(e) {
       if (e.key === "Escape") {
         closeAllModals();
       }
     });
 
-    // Animation de fond particules
+
     const canvas = document.getElementById('particles-bg');
     const ctx = canvas.getContext('2d');
     let particles = [];
@@ -525,9 +518,7 @@
   </script>
 
 <script>
-  // Ajout : nouvelle version du bouton utilisateur et colonne latérale profil
 
-  // Met à jour le bouton utilisateur après connexion
   function updateUserBtn(username) {
     const btn = document.getElementById('user-btn');
     btn.innerHTML = `
@@ -540,9 +531,9 @@
     };
   }
 
-  // Affiche une colonne latérale pour l'utilisateur connecté
+
   function showUserColumn(username) {
-    // Supprime l'ancienne colonne si elle existe
+
     let old = document.getElementById('user-column');
     if (old) old.remove();
 
@@ -576,11 +567,11 @@
 
     document.body.appendChild(column);
 
-    // Fermer la colonne
+   
     document.getElementById('close-user-column').onclick = function() {
       column.remove();
     };
-    // Fermer en cliquant à l'extérieur
+ 
     setTimeout(() => {
       document.addEventListener('click', closeOnClickOutside);
     }, 10);
@@ -590,13 +581,12 @@
         document.removeEventListener('click', closeOnClickOutside);
       }
     }
-    // Déconnexion
+ 
     column.querySelector('#logout-btn').onclick = function() {
       clearCurrentUser();
       resetUserBtn();
       column.remove();
     };
-    // Suppression du compte
     column.querySelector('#delete-account-btn').onclick = function() {
       if (confirm("Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible.")) {
         const idx = users.findIndex(u => u.username === username);
